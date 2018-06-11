@@ -20,6 +20,7 @@ module.exports = {
     'src/**/*.ts',
     'src/**/*.js',
     '!src/**/*.d.ts',
+    '!src/index.ts',
     '!src/**/Error/*.ts',
     '!**/node_modules/**',
   ],
