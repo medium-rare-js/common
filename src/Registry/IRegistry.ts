@@ -1,4 +1,4 @@
-export default interface IRegistry<T> {
+export interface IRegistry<T> {
   /**
    * @param {string} key
    * @param {T} item

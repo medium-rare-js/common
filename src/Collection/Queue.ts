@@ -1,4 +1,4 @@
-import IQueue from '@/Collection/IQueue';
+import { IQueue } from '@/Collection/IQueue';
 
 export default class Queue<T> implements IQueue<T> {
 

@@ -1,4 +1,4 @@
-export default interface IQueue<T> {
+export interface IQueue<T> {
   /**
    * @param {T} item
    */

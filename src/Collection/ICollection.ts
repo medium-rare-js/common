@@ -1,4 +1,4 @@
-export default interface ICollection<T> {
+export interface ICollection<T> {
   /**
    * @param {T} value
    * @param {string} key

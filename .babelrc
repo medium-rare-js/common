@@ -1,18 +1,28 @@
 {
   "presets": [
-    ["env", {
-      "modules": false,
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }
     }],
-    "stage-2"
+    ["@babel/preset-stage-0", {
+      "decoratorsLegacy": true
+    }]
   ],
-  "plugins": ["transform-runtime", "transform-decorators-legacy"],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    ["babel-plugin-module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@": "./src"
+      }
+    }],
+    "@babel/plugin-transform-typescript"
+  ],
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
+      "presets": ["@babel/preset-env", "@babel/preset-stage-0"],
+      "plugins": ["dynamic-import-node"]
     }
   }
 }
