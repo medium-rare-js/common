@@ -1,8 +1,12 @@
-export * from '@/Collection/Collection';
-export * from '@/Collection/ICollection';
-export * from '@/Collection/Queue';
-export * from '@/Collection/IQueue';
-export * from '@/Registry/Registry';
-export * from '@/Registry/IRegistry';
-export * from '@/Registry/Error/RegistryError';
-export * from '@/Registry/Error/UnregisteredItemError';
+import Collection from '@/Collection/Collection';
+import Queue from '@/Collection/Queue';
+import Registry from '@/Registry/Registry';
+
+import { ICollection } from '@/Collection/ICollection';
+import { IQueue } from '@/Collection/IQueue';
+import { IRegistry } from '@/Registry/IRegistry';
+
+import RegistryError from '@/Registry/Error/RegistryError';
+import UnregisteredItemError from '@/Registry/Error/UnregisteredItemError';
+
+export { Collection, ICollection, Queue, IQueue, Registry, IRegistry, RegistryError, UnregisteredItemError };
