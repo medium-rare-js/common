@@ -51,4 +51,4 @@ export interface ICollection<T> {
    * @returns {boolean}
    */
   isEmpty (): boolean;
-};
+}

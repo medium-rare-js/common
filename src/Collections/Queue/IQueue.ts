@@ -23,4 +23,4 @@ export interface IQueue<T> {
    * @returns {number}
    */
   size (): number;
-};
+}
