@@ -1,6 +1,6 @@
 import 'jest';
 import TestItem from '../../stubs/TestItem';
-import Queue from '@/Collection/Queue';
+import Queue from '@/Collections/Queue/Queue';
 
 let item1 = new TestItem();
 item1.name = 'Kate';
