@@ -1,4 +1,4 @@
-export interface ICollection<T> {
+interface ICollection<T> {
   /**
    * @param {T} value
    * @param {string} key
@@ -52,3 +52,5 @@ export interface ICollection<T> {
    */
   isEmpty (): boolean;
 }
+
+export default ICollection;

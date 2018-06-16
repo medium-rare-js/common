@@ -1,5 +1,5 @@
 import uniqid from 'uniqid';
-import { ICollection } from '@/Collections/Collection/ICollection';
+import ICollection from '@/Collections/Collection/ICollection';
 
 interface CollectionItems<T> {
   [key: string]: T;

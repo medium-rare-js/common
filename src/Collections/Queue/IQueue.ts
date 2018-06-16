@@ -1,4 +1,4 @@
-export interface IQueue<T> {
+interface IQueue<T> {
   /**
    * @param {T} item
    */
@@ -24,3 +24,5 @@ export interface IQueue<T> {
    */
   size (): number;
 }
+
+export default IQueue;

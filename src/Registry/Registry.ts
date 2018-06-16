@@ -1,4 +1,4 @@
-import { IRegistry } from '@/Registry/IRegistry';
+import IRegistry from '@/Registry/IRegistry';
 import UnregisteredItemError from '@/Registry/Error/UnregisteredItemError';
 
 export default class Registry<T> implements IRegistry<T> {

@@ -1,4 +1,4 @@
-export interface IRegistry<T> {
+interface IRegistry<T> {
   /**
    * @param {string} key
    * @param {T} item
@@ -30,3 +30,5 @@ export interface IRegistry<T> {
    */
   get (key: string): T;
 }
+
+export default IRegistry;
