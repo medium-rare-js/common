@@ -1,6 +1,7 @@
 import 'jest';
 import TestItem from '../../stubs/TestItem';
 import Collection from '@/Collections/Collection/Collection';
+import TestCollection from '../../stubs/TestCollection';
 
 let item1 = new TestItem();
 item1.name = 'Kate';
@@ -70,7 +71,7 @@ describe('Collection\\Collection', () => {
   });
 
   it('can be filtered using callback', () => {
-    let collection = new Collection<TestItem>();
+    let collection = new TestCollection<TestItem>();
     Object.keys(testItems).forEach((key) => {
       collection.add(testItems[key], key);
     });
@@ -82,5 +83,6 @@ describe('Collection\\Collection', () => {
     expect(newCollection.size()).toBe(1);
     expect(newCollection.has('user1')).toBeFalsy();
     expect(newCollection.has('user2')).toBeTruthy();
+    expect(newCollection instanceof TestCollection).toBeTruthy();
   });
 });

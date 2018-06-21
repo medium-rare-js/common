@@ -17,10 +17,10 @@ export default class Collection<T> implements ICollection<T> {
 
   /**
    * @param {T} value
-   * @param {string} [key]
-   * @returns {Collection<T>}
+   * @param {string} key
+   * @returns {ICollection<T>}
    */
-  add (value: T, key?: string): Collection<T> {
+  add (value: T, key?: string): ICollection<T> {
     if (key === undefined) {
       key = uniqid.process();
     }
@@ -64,9 +64,9 @@ export default class Collection<T> implements ICollection<T> {
 
   /**
    * @param {(item: T, key: string) => void} callback
-   * @returns {Collection<T>}
+   * @returns {ICollection<T>}
    */
-  forEach (callback: (item: T, key: string) => void): Collection<T> {
+  forEach (callback: (item: T, key: string) => void): ICollection<T> {
     Object.keys(this._items).forEach(key => {
       callback(this._items[key], key);
     });
@@ -76,10 +76,11 @@ export default class Collection<T> implements ICollection<T> {
 
   /**
    * @param {(item: T, key: string) => boolean} callback
-   * @returns {Collection<T>}
+   * @returns {ICollection<T>}
    */
-  filter (callback: (item: T, key: string) => boolean): Collection<T> {
-    let items = new Collection<T>();
+  filter (callback: (item: T, key: string) => boolean): ICollection<T> {
+    let items = new (this.constructor as any)();
+
     this.forEach((item: T, key: string) => {
       if (callback(item, key) === true) {
         items.add(item, key);
@@ -91,9 +92,9 @@ export default class Collection<T> implements ICollection<T> {
 
   /**
    * @param {string} key
-   * @returns {Collection<T>}
+   * @returns {ICollection<T>}
    */
-  delete (key: string): Collection<T> {
+  delete (key: string): ICollection<T> {
     if (this.has(key)) {
       this._size--;
     }
